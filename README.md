@@ -215,95 +215,96 @@ resources:
 ### Panel card example lovelace configuration
 ```
 type: custom:alarm-keypad-card
-title: DSCALARM_ESPHOME
+title: DSC_ALARM_ESPHOME
 unique_id: dsc1
-disp_line1: sensor.dscalarm_line1
-disp_line2: sensor.dscalarm_line2
+disp_line1: sensor.dsc_alarm_line1_partition_1_ln1_1
+disp_line2: sensor.dsc_alarm_line2_partition_1_ln2_1
+disp_line3: sensor.dsc_alarm_line2_partition_2_ln2_2
 service_type: esphome
 service: dscalarm_alarm_keypress_partition
-status_A: READY
-status_B: ARMED
+status_A: ARMED_P1
+status_B: ARMED_P2
 status_C: TROUBLE
 status_D: AC
-status_E: ''
-status_F: ''
-status_G: ''
-status_H: ''
-sensor_A: binary_sensor.dscalarm_partition_1_ready
-sensor_B: binary_sensor.dscalarm_partition_1_armed
-sensor_C: binary_sensor.dscalarm_trouble_status
-sensor_D: binary_sensor.dscalarm_ac_status
-sensor_E: ''
-sensor_F: ''
-sensor_G: ''
-sensor_H: ''
+status_E: ARMED_P2
+status_F: ""
+status_G: ""
+status_H: ""
+sensor_A: binary_sensor.dsc_alarm_partition_1_armed_arm_1
+sensor_B: binary_sensor.dsc_alarm_partition_2_armed_arm_2
+sensor_C: binary_sensor.dsc_alarm_trouble_status_tr
+sensor_D: binary_sensor.dsc_alarm_ac_status_ac
+sensor_E: ""
+sensor_F: ""
+sensor_G: ""
+sensor_H: ""
 button_A: STAY
 button_B: AWAY
-button_C: NIGHT
-button_D:
-button_E:
+button_C: DIS2
+button_D: ARM2
+button_E: null
 button_F: <
-button_G: '>'
-button_H: 
+button_G: ">"
+button_H: null
 cmd_A:
   keys: S
   partition: 1
 cmd_B:
   keys: W
-  partition: 1  
-cmd_C:
-  keys: 'N'
   partition: 1
+cmd_C:
+  partition: 2
+  keys: "1111"
 cmd_D:
-  keys:
-  partition: 1    
+  keys: W
+  partition: 2
 cmd_E:
-  keys:
-  partition: 1    
+  keys: null
+  partition: 1
 cmd_H:
-  keys:
-  partition: 1  
+  keys: null
+  partition: 1
 cmd_F:
   keys: <
   partition: 1
 cmd_G:
-  keys: '>'
+  keys: ">"
   partition: 1
 key_0:
-  keys: '0'
+  keys: "0"
   partition: 1
 key_1:
-  keys: '1'
+  keys: "1"
   partition: 1
 key_2:
-  keys: '2'
+  keys: "2"
   partition: 1
 key_3:
-  keys: '3'
+  keys: "3"
   partition: 1
 key_4:
-  keys: '4'
+  keys: "4"
   partition: 1
 key_5:
-  keys: '5'
+  keys: "5"
   partition: 1
 key_6:
-  keys: '6'
+  keys: "6"
   partition: 1
 key_7:
-  keys: '7'
+  keys: "7"
   partition: 1
 key_8:
-  keys: '8'
+  keys: "8"
   partition: 1
 key_9:
-  keys: '9'
+  keys: "9"
   partition: 1
 key_star:
-  keys: '*'
+  keys: "*"
   partition: 1
 key_pound:
-  keys: '#'
+  keys: "#"
   partition: 1
 text_1: BYPASS
 text_2: SERV
@@ -316,14 +317,15 @@ text_8: PROG
 text_9: NIGHT
 text_star: SELECT
 text_pound: ENTER
-text_0: ''  
-beep: sensor.dscalarm_beeps
+text_0: ""
+beep: sensor.dsc_alarm_beeps
 scale: 1
 view_pad: true
 view_display: true
 view_status: true
 view_status_2: false
 view_bottom: true
+button_left: false
 	
 ```	
 
